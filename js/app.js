@@ -16,7 +16,12 @@ const handleFormsubmit = function (event) {
   const bookAuthor = document.createElement('h4');
   const bookCat = document.createElement('p');
 
-  bookTitle.textContent = event.target.title.value;
+  const {
+    target: {
+      title: { value: titleText },
+    },
+  } = event;
+  bookTitle.textContent = titleText;
   bookAuthor.textContent = event.target.author.value;
   bookCat.textContent = event.target.category.value;
 
